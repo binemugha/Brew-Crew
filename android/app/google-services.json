@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567323468717",
+    "project_id": "binemugha-flutter-learning",
+    "storage_bucket": "binemugha-flutter-learning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567323468717:android:e7febaae9bcce08827f724",
+        "android_client_info": {
+          "package_name": "com.binemugha.my_brew_crew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHtSVBJLjJLSBNPiT-NGmgCyN7rsLNgP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
