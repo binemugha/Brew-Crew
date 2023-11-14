@@ -4,7 +4,7 @@ import 'package:my_brew_crew/screens/models/brew.dart';
 class BrewTile extends StatelessWidget {
   final Brew brew;
 
-  BrewTile({required this.brew});
+  BrewTile({super.key, required this.brew});
 
   @override
   Widget build(BuildContext context) {
