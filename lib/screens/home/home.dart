@@ -5,14 +5,28 @@ import 'package:my_brew_crew/screens/home/brew_list.dart';
 import 'package:my_brew_crew/screens/services/auth.dart';
 import 'package:my_brew_crew/screens/services/database.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:my_brew_crew/screens/models/brew.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
 
+  Home({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot?>.value(
+    void showSettingsPanel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+              child: Text('bottom sheet'),
+            );
+          });
+    }
+
+    return StreamProvider<List<Brew>?>.value(
       value: DatabaseService().brews,
       initialData: null,
       child: Scaffold(
@@ -29,7 +43,13 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.person),
               label: Text("Logout"),
               style: flatButtonStyle,
-            )
+            ),
+            TextButton.icon(
+              onPressed: () => showSettingsPanel(),
+              icon: Icon(Icons.settings),
+              label: Text('Settings'),
+              style: flatButtonStyle,
+            ),
           ],
         ),
         body: BrewList(),
