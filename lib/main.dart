@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_brew_crew/firebase_options.dart';
 import 'package:my_brew_crew/screens/models/usermodel.dart';
 import 'package:my_brew_crew/screens/services/auth.dart';
 import 'package:my_brew_crew/screens/wrapper.dart';
@@ -7,7 +8,9 @@ import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

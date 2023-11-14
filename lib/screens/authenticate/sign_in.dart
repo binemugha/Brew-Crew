@@ -17,9 +17,9 @@ class _SignInState extends State<SignIn> {
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
 
-  String email = "";
-  String password = "";
-  String error = "";
+  String email = '';
+  String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _SignInState extends State<SignIn> {
               widget.toggleView();
             },
             icon: Icon(Icons.person),
-            label: Text("Register"),
+            label: Text('Register'),
             style: flatButtonStyle,
           )
         ],
@@ -49,9 +49,9 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20.0),
                   TextFormField(
                       decoration:
-                          textInputDecoration.copyWith(hintText: "Email"),
+                          textInputDecoration.copyWith(hintText: 'Email'),
                       validator: (val) =>
-                          val!.isEmpty ? "Enter an email" : null,
+                          val!.isEmpty ? 'Enter an email' : null,
                       onChanged: (val) {
                         setState(() {
                           email = val;
@@ -60,10 +60,10 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20.0),
                   TextFormField(
                       decoration:
-                          textInputDecoration.copyWith(hintText: "Password"),
+                          textInputDecoration.copyWith(hintText: 'Password'),
                       obscureText: true,
                       validator: (val) => val!.length < 6
-                          ? "Enter more than 6 characters"
+                          ? 'Enter more than 6 characters'
                           : null,
                       onChanged: (val) {
                         setState(() {
@@ -81,14 +81,14 @@ class _SignInState extends State<SignIn> {
                             email, password);
                         if (result == null) {
                           setState(() {
-                            error = "Could not sign in with credentials";
+                            error = 'Could not sign in with credentials';
                             loading = false;
                           });
                         }
                       }
                     },
                     child:
-                        Text("Sign in", style: TextStyle(color: Colors.white)),
+                        Text('Sign in', style: TextStyle(color: Colors.white)),
                   ),
                   SizedBox(height: 12.0),
                   Text(
