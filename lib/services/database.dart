@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:my_brew_crew/screens/models/brew.dart';
-import 'package:my_brew_crew/screens/models/usermodel.dart';
+import 'package:my_brew_crew/models/brew.dart';
+import 'package:my_brew_crew/models/usermodel.dart';
 
 class DatabaseService {
   final String? uid;

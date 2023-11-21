@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_brew_crew/firebase_options.dart';
-import 'package:my_brew_crew/screens/models/usermodel.dart';
-import 'package:my_brew_crew/screens/services/auth.dart';
+import 'package:my_brew_crew/models/usermodel.dart';
+import 'package:my_brew_crew/services/auth.dart';
 import 'package:my_brew_crew/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';

@@ -1,13 +1,10 @@
-// import 'package:flutter/src/widgets/container.dart';
-// import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:my_brew_crew/screens/home/brew_list.dart';
 import 'package:my_brew_crew/screens/home/settings_form.dart';
-import 'package:my_brew_crew/screens/services/auth.dart';
-import 'package:my_brew_crew/screens/services/database.dart';
+import 'package:my_brew_crew/services/auth.dart';
+import 'package:my_brew_crew/services/database.dart';
 import 'package:provider/provider.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:my_brew_crew/screens/models/brew.dart';
+import 'package:my_brew_crew/models/brew.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -38,22 +35,27 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             TextButton.icon(
-              onPressed: () async {
-                await _auth.signOut();
-              },
-              icon: Icon(Icons.person),
-              label: Text("Logout"),
-              style: flatButtonStyle,
-            ),
-            TextButton.icon(
               onPressed: () => showSettingsPanel(),
               icon: Icon(Icons.settings),
               label: Text('Settings'),
               style: flatButtonStyle,
             ),
+            TextButton.icon(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              icon: Icon(Icons.person),
+              label: Text('Logout'),
+              style: flatButtonStyle,
+            ),
           ],
         ),
-        body: BrewList(),
+        body: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/coffee_bg.png'),
+                    fit: BoxFit.cover)),
+            child: BrewList()),
       ),
     );
   }

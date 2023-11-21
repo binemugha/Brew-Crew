@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_brew_crew/screens/home/home.dart';
-import 'package:my_brew_crew/screens/services/auth.dart';
+import 'package:my_brew_crew/services/auth.dart';
 import 'package:my_brew_crew/shared/loading.dart';
 
-import '../../shared/constants.dart';
+import '../../../shared/constants.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
